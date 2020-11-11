@@ -48,5 +48,5 @@ kafka_2.13-2.6.0/bin/kafka-console-producer.sh --topic quickstart-events --boots
 kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 ```
 
-We are now ready to broker messages. In the **Producer** terminal, type some text and press `enter`. In the **Consumer** terminal you should see your text getting eread.
+We are now ready to broker messages. In the **Producer** terminal, type some text and press `enter`. In the **Consumer** terminal you should see your text getting read.
 
