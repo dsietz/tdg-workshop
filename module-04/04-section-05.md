@@ -1,6 +1,6 @@
 # Section V - service testing
 
-A very powerful feature of the `actix-web` crate is the built in service testing that comes out-of-the-box. We utilized this feature in `web-service-tests.rs` as part of our integrated testing. 
+A very powerful feature of the `actix-web` crate is the built in service testing that comes out-of-the-box. We utilized this feature in `web-service-tests.rs` as part of our integrated testing.
 
 However, we don't need to test the code for the service modules since they have already been tested in the SDKs. Instead, we will smoke test the the RESTful service is working correctly by using the `curl` command.
 
@@ -22,7 +22,7 @@ The response payload should be the following:
 }
 ```
 
-### Kafka genesis Topic
+## Kafka genesis Topic
 
 > TIP: You can verify that the data was converted to a DaaSDocument and sent to the Kafka broker by running a Kafka consumer and monitoring the `genesis` topic. We recommend using a new terminal.
 
@@ -67,7 +67,7 @@ The response payload should be the following:
       "content-type":"application/json"
    },
    "tags":[
-      
+
    ],
    "data_obj":[
       123,
@@ -109,11 +109,11 @@ The response payload should be the following:
 }
 ```
 
-### Local Storage
+## Local Storage
 
-Since the DaaS pattern is meant to be a loosely coupled architecture and built-in support of a distributed model, the `DaaSListener` automatically stores a copy of the DaaSDocument in  local storage in case the broker is not available and the records need to be rerun at a later time.
+Since the DaaS pattern is meant to be a loosely coupled architecture and built-in support of a distributed model, the `DaaSListener` automatically stores a copy of the DaaSDocument in local storage in case the broker is not available and the records need to be rerun at a later time.
 
-After the first call has been made to the sourcing RESTful service, a directory named `local_storage` till have been created in the main path, \(in this case `ArchConfWorkshopUser:~/environment`\). 
+After the first call has been made to the sourcing RESTful service, a directory named `local_storage` till have been created in the main path, \(in this case `ArchConfWorkshopUser:~/environment`\).
 
 ![](../.gitbook/assets/cloud9-06.jpg)
 

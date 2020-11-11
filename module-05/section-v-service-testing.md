@@ -2,7 +2,7 @@
 
 Since the genesis service is not a RESTful service, we will have to verify that it is successfully running using Kafka consumer and a S3 Bucket lookup.
 
-### Kafka
+## Kafka
 
 The genesis service dynamically creates topics based on the metadata of the DaaSDocument that is consumes.
 
@@ -37,7 +37,7 @@ Let's look at the documents that have been sent to one of these topics.
 ./kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic order.clothing --from-beginning
 ```
 
-### S3 Bucket
+## S3 Bucket
 
 Before the genesis service send copies of the DaaSDocument downstream to be provisioned, it first stored the original copy in the S3 bucket that was configured in the `gensis.rs` file.
 
@@ -53,7 +53,7 @@ To confirm that the DaaSDocument has been stored in the S3 bucket, run the follo
 aws s3api list-objects --bucket iapp-archconf-workshop --prefix genesis --query 'Contents[].{Key: Key, Size: Size}'
 ```
 
-A json array should be returned with the file\(s\) `.daas` 
+A json array should be returned with the file\(s\) `.daas`
 
 ```text
 ArchConfWorkshopUser:~/environment $ aws s3api list-objects --bucket iapp-archconf-workshop --prefix genesis --query 'Contents[].{Key: Key, Size: Size}'                                                                                                                      

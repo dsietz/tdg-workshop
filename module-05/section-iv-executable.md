@@ -41,9 +41,9 @@ fn main() {
     std::env::set_var("RUST_LOG", "info");
     env_logger::init();
     let hosts = vec!("localhost:9092".to_string());
-    
+
     let stopper = DaasGenesisProcessor::run(hosts, FetchOffset::Earliest, GroupOffsetStorage::Kafka, get_bucket());
-    
+
     println!("Genesis processor is running ...");
     println!("Press [Enter] to stop the Genesis processor.");
 
@@ -82,9 +82,9 @@ fn main() {
     std::env::set_var("RUST_LOG", "info");
     env_logger::init();
     let hosts = vec!("localhost:9092".to_string());
-    
+
     let stopper = DaasGenesisProcessor::run(hosts, FetchOffset::Earliest, GroupOffsetStorage::Kafka, get_bucket());
-    
+
     println!("Genesis processor is running ...");
     println!("Press [Enter] to stop the Genesis processor.");
 

@@ -1,6 +1,6 @@
 # Section VI - testing the service
 
-### Step 1 - Checking the services
+## Step 1 - Checking the services
 
 Let's first make sure all our services are running and restart our order clothing service.
 
@@ -13,26 +13,26 @@ In a new terminal, run the following command:
 In another terminal, let's run the sourcing script.
 
 ```text
-./scripts/curl-sourcing.sh 
+./scripts/curl-sourcing.sh
 ```
 
 You should see all the services printing to the console about the data they have touched.
 
-#### Sourcing RESTful service
+### Sourcing RESTful service
 
 ```text
 [2020-11-09T13:24:06Z INFO  actix_web::middleware::logger] 127.0.0.1:33482 curl/7.61.1
 [2020-11-09T13:24:06Z INFO  actix_web::middleware::logger] 127.0.0.1:33482 "POST /order/clothing/iStore/5000 HTTP/1.1" 200 15 "-" "curl/7.61.1" 0.002745
 ```
 
-#### Genesis service
+### Genesis service
 
 ```text
 [2020-11-09T13:24:06Z INFO  daas::service::processor] Putting document order~clothing~iStore~5000 in S3
-[2020-11-09T13:24:06Z INFO  daas::service::processor] Brokering document order~clothing~iStore~5000 ... 
+[2020-11-09T13:24:06Z INFO  daas::service::processor] Brokering document order~clothing~iStore~5000 ...
 ```
 
-#### Order Clothing service
+### Order Clothing service
 
 ```text
 ArchConfWorkshopUser:~/environment $ ./rust-daas/target/debug/myapp_order_clothing 
@@ -42,7 +42,7 @@ Order Number 5000 from the iStore has a status of "new"...
 Retreiving leather_jacket file
 ```
 
-### Step 2 - Checking the data storage
+## Step 2 - Checking the data storage
 
 There should now be a new directory int he `environment` directory named `workshop_storage`. Inside the `workshop_storage` directory should be a `clothing-leather_jacket.json` file. This is where the aggregated records is stored.
 

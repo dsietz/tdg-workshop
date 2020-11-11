@@ -30,10 +30,10 @@ fn read_file(file: String) -> Option<Value> {
         },
         Err(_e) => return None,
     };
-    
+
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
-    
+
     Some(serde_json::from_str(&contents).unwrap())
 }
 ```
@@ -52,25 +52,25 @@ Modify the `index` function with the new business logic.
 ```rust
 async fn index(req: HttpRequest) -> HttpResponse {
     let product = req.match_info().get("product").unwrap_or(ALL_PRODUCTS);
-    
+
    let content = match &product {
         &"all" => {
             let mut products = Vec::new();
-        
+
             let entries = fs::read_dir(WORKSPACE_LOCAL_STORAGE).unwrap()
                 .map(|res| res.map(|e| e.path()))
                 .collect::<Result<Vec<_>, io::Error>>().unwrap();
-                
+
             for entry in entries.iter() {
                 let file = entry.to_str().unwrap().to_string();
                 let mut obj = read_file(file.clone()).unwrap();
                 obj.as_object_mut()
                     .unwrap()
                     .insert("product".to_string(), Value::String(extract_product_name(file)));
-                
+
                 products.push(obj);
             }
-            
+
             json!(products).to_string()
         },
         _ => {
@@ -84,7 +84,7 @@ async fn index(req: HttpRequest) -> HttpResponse {
             }
         },
     };
-    
+
     HttpResponse::build(StatusCode::OK)
         .body(&content)
 }
@@ -115,10 +115,10 @@ fn read_file(file: String) -> Option<Value> {
         },
         Err(_e) => return None,
     };
-    
+
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
-    
+
     Some(serde_json::from_str(&contents).unwrap())
 }
 
@@ -131,25 +131,25 @@ fn extract_product_name(file_path: String) -> String {
 
 async fn index(req: HttpRequest) -> HttpResponse {
     let product = req.match_info().get("product").unwrap_or(ALL_PRODUCTS);
-    
+
    let content = match &product {
         &"all" => {
             let mut products = Vec::new();
-        
+
             let entries = fs::read_dir(WORKSPACE_LOCAL_STORAGE).unwrap()
                 .map(|res| res.map(|e| e.path()))
                 .collect::<Result<Vec<_>, io::Error>>().unwrap();
-                
+
             for entry in entries.iter() {
                 let file = entry.to_str().unwrap().to_string();
                 let mut obj = read_file(file.clone()).unwrap();
                 obj.as_object_mut()
                     .unwrap()
                     .insert("product".to_string(), Value::String(extract_product_name(file)));
-                
+
                 products.push(obj);
             }
-            
+
             json!(products).to_string()
         },
         _ => {
@@ -163,7 +163,7 @@ async fn index(req: HttpRequest) -> HttpResponse {
             }
         },
     };
-    
+
     HttpResponse::build(StatusCode::OK)
         .body(&content)
 }
@@ -172,7 +172,7 @@ async fn index(req: HttpRequest) -> HttpResponse {
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
-    
+
     HttpServer::new(|| {
         App::new()
             .wrap(Logger::default())

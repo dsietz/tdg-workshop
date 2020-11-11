@@ -31,7 +31,7 @@ We can now add our supportive functions.
 ```rust
 async fn index(req: HttpRequest) -> HttpResponse {
     let product = req.match_info().get("product").unwrap_or(ALL_PRODUCTS);
-    
+
    let content = match &product {
         &"all" => {
             ALL_PRODUCTS.to_string()
@@ -40,7 +40,7 @@ async fn index(req: HttpRequest) -> HttpResponse {
             product.to_string()
         },
     };
-    
+
     HttpResponse::build(StatusCode::OK)
         .body(&content)
 }
@@ -53,7 +53,7 @@ Lastly, we write the `main` function that will be executed.
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
-    
+
     HttpServer::new(|| {
         App::new()
             .wrap(Logger::default())

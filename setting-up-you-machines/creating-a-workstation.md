@@ -14,15 +14,15 @@ First login to the AWS Console. Open your browser and navigate to teh AWS Cloud9
 
 Click on the `Create Environment` button
 
-### Step 1
+## Step 1
 
-Enter your name as the `Name` of the new environment. 
+Enter your name as the `Name` of the new environment.
 
 > NOTE: Do not use the Name `The Instructor`
 
 ![](../.gitbook/assets/cloud9-01.jpg)
 
-### Step 2
+## Step 2
 
 Select the following:
 
@@ -33,13 +33,11 @@ Select the following:
 
 ![](../.gitbook/assets/cloud9-02.jpg)
 
-
-
 ![](../.gitbook/assets/cloud9-03.jpg)
 
 Click `Next step`
 
-### Step 3
+## Step 3
 
 Your review pafge should look like this \(with your own name as the `Name`\)
 

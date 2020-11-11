@@ -2,7 +2,7 @@
 
 At this point, Kafka has already been installed and all we have to do is start the service.
 
-### Step 1
+## Step 1
 
 Let first start the Zookeeper service. In a new terminal \(Window &gt; New terminal or `Alt-T`\) run the following script.
 
@@ -10,7 +10,7 @@ Let first start the Zookeeper service. In a new terminal \(Window &gt; New termi
 ./scripts/zookeeper-start.sh
 ```
 
-### Step 2
+## Step 2
 
 Next, let's start the Kafka service. In a new terminal \(Window &gt; New terminal or `Alt-T`\) run the following script.
 
@@ -19,20 +19,20 @@ Next, let's start the Kafka service. In a new terminal \(Window &gt; New termina
 ```
 
 > Tip: You can stop the services using the following commands:
-
+>
 > ```text
 > ./scripts/kafka-stop.sh
 > ```
-
+>
 > ```text
 > ./scripts/zookeeper-stop.sh
 > ```
 
-### Step 3
+## Step 3
 
 Let's try out Kafka. We will have a producer to send messages to a topic that a consumer will be reading.
 
-**Producer**  In a new terminal \(Window &gt; New terminal or `Alt-T`\) run the following command:
+**Producer** In a new terminal \(Window &gt; New terminal or `Alt-T`\) run the following command:
 
 > Ignore any warnings
 

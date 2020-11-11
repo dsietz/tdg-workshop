@@ -4,7 +4,7 @@
 
 Once we have created our service and all the tests have passed, we are ready to build out the executable and run our service.
 
-#### Add Log functionality
+## Add Log functionality
 
 > Since [Logs](https://12factor.net/logs) is eleventh factor in a 12 Factor Application, we will enable this attribute by implementing automated logging for this RESTful endpoint. by including the [`log`](https://crates.io/crates/log) and [`env_logger`](https://crates.io/crates/env_logger) creates.
 
@@ -39,7 +39,7 @@ static VER: &str = "v1";
 pub mod hello_world;
 ```
 
-#### Writing the executable
+## Writing the executable
 
 Now that we have the dependent crates and modules declared in our library, we can call the service in an executable.
 
@@ -75,7 +75,7 @@ async fn main() -> std::io::Result<()> {
 
 Make sure all your tests are still passing by using the `cargo test` command.
 
-#### Starting the service
+## Starting the service
 
 We are now ready to start the RESTful service. There are 2 ways to start the service.
 
@@ -87,7 +87,7 @@ ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run
      Running `target/debug/hello_world`
 ```
 
-Since we are working on a virtual machine , we will use `curl` to call our services. 
+Since we are working on a virtual machine , we will use `curl` to call our services.
 
 Run the following script.
 
@@ -97,7 +97,7 @@ Run the following script.
 ./scripts/curl-hello.sh
 ```
 
-You should see the message `Hello World!` 
+You should see the message `Hello World!`
 
 On the command line where the service is running, you will notice that the calls are being logged and printed to the console.
 
@@ -108,7 +108,7 @@ On the command line where the service is running, you will notice that the calls
 
 To stop the service, use `ctrl` + `c`.
 
-   2. Running using the executable.
+1. Running using the executable.
 
 ```text
 PS C:\workspace\rust-daas> cargo build

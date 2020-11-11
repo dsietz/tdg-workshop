@@ -2,12 +2,12 @@
 
 We are now ready to start the microservice that will listen for data on the `genesis` topic and stash it in the S3 bucket, then send it downstream to the next topic which is dynamically built based on the metadata of the DaaSDocument.
 
- There are 2 ways to start the service.
+There are 2 ways to start the service.
 
 1. Running using `cargo run` command while developing \(local service testing\)
 
 > IMPORTANT: Run the executable in a new terminal so that you can have the sourcing and the genesis services running in parallel.
-
+>
 > NOTE: we provide the argument `--bin myapp_genesisg` because there are now multiple executables and must specify which one to run.
 
 ```text
@@ -19,12 +19,12 @@ Press [Enter] to stop the Genesis processor.
 [2020-11-04T21:28:23Z INFO  daas::service::processor] Putting document order~clothing~iStore~5000 in S3
 [2020-11-04T21:28:23Z INFO  daas::service::processor] Brokering document order~clothing~iStore~5000 ... 
 [2020-11-04T21:28:27Z INFO  daas::service::processor] Putting document order~clothing~iStore~5000 in S3
-[2020-11-04T21:28:27Z INFO  daas::service::processor] Brokering document order~clothing~iStore~5000 ... 
+[2020-11-04T21:28:27Z INFO  daas::service::processor] Brokering document order~clothing~iStore~5000 ...
 ```
 
 To stop the service, use `ctrl` + `c`.
 
-   2. Running using the executable.
+1. Running using the executable.
 
 ```text
 ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo build
@@ -39,6 +39,6 @@ Whenever you use the `cargo build` command, it places the created executable in 
 Since it is an executable, simple run the executable from the command terminal.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_genesis 
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_genesis
 ```
 

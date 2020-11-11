@@ -2,7 +2,7 @@
 
 To help us get setup with the tools and services for this workshop, \(e.g.: Rust, Kafka\), we have built a setup script that will perform all the automated installations and configurations.
 
-### Step 1
+## Step 1
 
 In the main terminal at the bottom where it states `ArchConfWorkshopUser:~/environment $` run the following commands - one at a time.
 
@@ -22,7 +22,7 @@ sudo chmod +x workshop.sh
 source $HOME/.cargo/env
 ```
 
-### Step 2
+## Step 2
 
 Let verify that Rust is installed correctly. Part of the `workshop` script was to create a `dummy` project, which should now appear as a directory in your left panel \(file tree\).
 

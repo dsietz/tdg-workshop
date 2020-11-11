@@ -2,7 +2,7 @@
 
 We are now ready to start the RESTful service that will listen for data that needs to be sourced and feeds it to the event flow.
 
- There are 2 ways to start the service.
+There are 2 ways to start the service.
 
 1. Running using `cargo run` command while developing \(local service testing\)
 
@@ -17,7 +17,7 @@ ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run --bin myapp_so
 
 To stop the service, use `ctrl` + `c`.
 
-   2. Running using the executable.
+1. Running using the executable.
 
 ```text
 ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo build
@@ -30,6 +30,6 @@ Whenever you use the `cargo build` command, it places the created executable in 
 Since it is an executable, simple run the executable from the command terminal.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_sourcing 
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_sourcing
 ```
 

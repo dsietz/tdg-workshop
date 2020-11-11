@@ -2,7 +2,7 @@
 
 We are now ready to start the RESTful service that will act as the data source for our DaaS platform.The web service will provide a JSON document\(s\) with the number of new orders by product.
 
- There are 2 ways to start the service.
+There are 2 ways to start the service.
 
 1. Running using `cargo run` command while developing \(local service testing\)
 
@@ -17,7 +17,7 @@ ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run --bin myapp_re
 
 To stop the service, use `ctrl` + `c`.
 
-   2. Running using the executable.
+1. Running using the executable.
 
 ```text
 ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo build
@@ -30,10 +30,10 @@ Whenever you use the `cargo build` command, it places the created executable in 
 Since it is an executable, simple run the executable from the command terminal.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_reporting 
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_reporting
 ```
 
-#### Checking the web service
+## Checking the web service
 
 Let's make sure the web service is working correctly by running the following script in an available terminal.
 
@@ -58,6 +58,4 @@ all
 ArchConfWorkshopUser:~/environment $ ./scripts/curl-reporting.sh -p "leather jacket"
 leather_jacket
 ```
-
-
 

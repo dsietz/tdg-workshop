@@ -12,5 +12,3 @@ path = "src/bin/reporting.rs"
 
 > NOTE: We don't need to add any new crates to the `[dependencies]` section in the `Cargo.toml` file
 
-
-

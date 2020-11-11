@@ -30,7 +30,7 @@ async fn main() -> std::io::Result<()> {
     std::env::set_var("DAAS_LOCAL_STORAGE", "../local_storage");
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
-    
+
     HttpServer::new(|| App::new()        
             .wrap(Logger::default())
             .wrap(Logger::new("%a %{User-Agent}i"))
@@ -76,7 +76,7 @@ async fn main() -> std::io::Result<()> {
     std::env::set_var("DAAS_LOCAL_STORAGE", "../local_storage");
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
-    
+
     HttpServer::new(|| App::new()        
             .wrap(Logger::default())
             .wrap(Logger::new("%a %{User-Agent}i"))

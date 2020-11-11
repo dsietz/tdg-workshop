@@ -60,5 +60,3 @@ pub mod hello_world;
 > error: could not compile `rust-daas`.
 > ```
 
-
-

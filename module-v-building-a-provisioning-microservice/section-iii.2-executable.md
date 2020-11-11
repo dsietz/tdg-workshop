@@ -13,7 +13,7 @@ use std::io::prelude::*;
 use serde_json::json;
 ```
 
-We will also be using a constant to define where our aggregated data records will be stored. 
+We will also be using a constant to define where our aggregated data records will be stored.
 
 > Once again, this could be configured as a command line argument using the `clap` crate.
 
@@ -44,10 +44,10 @@ fn read_file(product_name: String) -> Option<Value> {
         },
         Err(_e) => return None,
     };
-    
+
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
-    
+
     Some(serde_json::from_str(&contents).unwrap())
 }
 ```
@@ -86,7 +86,7 @@ To add our business logic, \(inside the `callback` function after the `println` 
                             serde_json::from_str(c).unwrap()
                         },
                     };
-                
+
                     match save_file(prd.clone().to_string(), content.to_string()) {
                         Ok(_ok) => Ok(1),
                         Err(err) => {
@@ -138,10 +138,10 @@ fn read_file(product_name: String) -> Option<Value> {
         },
         Err(_e) => return None,
     };
-    
+
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
-    
+
     Some(serde_json::from_str(&contents).unwrap())
 }
 
@@ -168,7 +168,7 @@ fn main() {
                             .with_offset_storage(GroupOffsetStorage::Kafka)
                             .create()
                             .unwrap();
-                            
+
     // Create the local storage directory for the aggregated data
     create_local_storage();
 
@@ -179,7 +179,7 @@ fn main() {
             let order: Value = serde_json::from_str(&String::from_utf8(doc.data_obj_as_ref().to_vec()).unwrap()).unwrap();
 
             println!("Order Number {} from the {} has a status of {}...", doc.source_uid, doc.source_name, order.get("status").unwrap());
-            
+
             match order.get("status").unwrap().as_str().unwrap() {
                 "new" => {
                     let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").replace("/","");
@@ -195,7 +195,7 @@ fn main() {
                             serde_json::from_str(c).unwrap()
                         },
                     };
-                
+
                     match save_file(prd.clone().to_string(), content.to_string()) {
                         Ok(_ok) => Ok(1),
                         Err(err) => {

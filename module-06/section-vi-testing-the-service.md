@@ -1,6 +1,6 @@
 # Section VI - testing the service
 
-### Step 1 - Checking the services
+## Step 1 - Checking the services
 
 Let's first make sure all our services are running and restart our reporting service.
 
@@ -13,26 +13,26 @@ In a new terminal, run the following command:
 In another terminal, let's run the sourcing script.
 
 ```text
-./scripts/curl-sourcing.sh 
+./scripts/curl-sourcing.sh
 ```
 
 You should see all the services printing to the console about the data they have touched.
 
-#### Sourcing RESTful service
+### Sourcing RESTful service
 
 ```text
 [2020-11-09T13:24:06Z INFO  actix_web::middleware::logger] 127.0.0.1:33482 curl/7.61.1
 [2020-11-09T13:24:06Z INFO  actix_web::middleware::logger] 127.0.0.1:33482 "POST /order/clothing/iStore/5000 HTTP/1.1" 200 15 "-" "curl/7.61.1" 0.002745
 ```
 
-#### Genesis service
+### Genesis service
 
 ```text
 [2020-11-09T13:24:06Z INFO  daas::service::processor] Putting document order~clothing~iStore~5000 in S3
-[2020-11-09T13:24:06Z INFO  daas::service::processor] Brokering document order~clothing~iStore~5000 ... 
+[2020-11-09T13:24:06Z INFO  daas::service::processor] Brokering document order~clothing~iStore~5000 ...
 ```
 
-#### Order Clothing service
+### Order Clothing service
 
 ```text
 ArchConfWorkshopUser:~/environment $ ./rust-daas/target/debug/myapp_order_clothing 
@@ -42,13 +42,13 @@ Order Number 5000 from the iStore has a status of "new"...
 Retreiving leather_jacket file
 ```
 
-#### Reporting service
+### Reporting service
 
 ```text
 ArchConfWorkshopUser:~/environment $ ./rust-daas/target/debug/myapp_reporting
 ```
 
-### Step 2 - Calling the Reporting RESTful service
+## Step 2 - Calling the Reporting RESTful service
 
 Let's first make sure the returned payload is correct based on the resource path.
 
@@ -76,7 +76,7 @@ Now let's make sure the payload is correct when a product is not specified.
 [{"orders":6,"product":"leather jacket"}]
 ```
 
-#### Step 3 - Testing the Data Provisioning Flow
+### Step 3 - Testing the Data Provisioning Flow
 
 We still haven't verified that our DaaS platform is working when sourcing dynamic content. Let's being by sourcing some variable content.
 
@@ -91,9 +91,9 @@ curl --location --request POST 'http://localhost:8000/order/clothing/iStore/5000
 --header 'Data-Tracker-Chain: W3siaWRlbnRpZmllciI6eyJkYXRhX2lkIjoib3JkZXJ+Y2xvdGhpbmd+aVN0b3JlfjUwMDAiLCJpbmRleCI6MCwidGltZXN0YW1wIjowLCJhY3Rvcl9pZCI6IiIsInByZXZpb3VzX2hhc2giOiIwIn0sImhhc2giOiI3MjI1OTUwMzMyNzI3NjAyMDk1MjEwMjM2ODY3MjE0ODM1ODQ4NSIsIm5vbmNlIjo1fV0=' \
 --header 'Authorization: Basic aXN0b3JlX2FwcDpzZWNyZXQ=' \
 --data-raw '{
-	"product":"wool hat",
-	"quantity": 1,
-	"status":"new"
+    "product":"wool hat",
+    "quantity": 1,
+    "status":"new"
 }'
 ```
 
@@ -114,9 +114,9 @@ curl --location --request POST 'http://localhost:8000/order/clothing/myStore/500
 --header 'Data-Tracker-Chain: W3siaWRlbnRpZmllciI6eyJkYXRhX2lkIjoib3JkZXJ+Y2xvdGhpbmd+aVN0b3JlfjUwMDAiLCJpbmRleCI6MCwidGltZXN0YW1wIjowLCJhY3Rvcl9pZCI6IiIsInByZXZpb3VzX2hhc2giOiIwIn0sImhhc2giOiI3MjI1OTUwMzMyNzI3NjAyMDk1MjEwMjM2ODY3MjE0ODM1ODQ4NSIsIm5vbmNlIjo1fV0=' \
 --header 'Authorization: Basic aXN0b3JlX2FwcDpzZWNyZXQ=' \
 --data-raw '{
-	"product":"wool hat",
-	"quantity": 1,
-	"status":"new"
+    "product":"wool hat",
+    "quantity": 1,
+    "status":"new"
 }'
 ```
 
@@ -126,9 +126,9 @@ After you rerun the `./scripts/curl-sourcing.sh` script, you should get a payloa
 {"error":"unable to process data"}
 ```
 
-This is because the DaaS SDK automatically verifies that the data being sent is coming from the original source that created it. This is possible because of the `Data Tracker Chain` feature from the `pbd`. 
+This is because the DaaS SDK automatically verifies that the data being sent is coming from the original source that created it. This is possible because of the `Data Tracker Chain` feature from the `pbd`.
 
-Update the `curl-sourcing.sh` script to the following, which has a `Data-Tracker-Chain` value that matches the resource path  `order/clothing/myStore/5000`:
+Update the `curl-sourcing.sh` script to the following, which has a `Data-Tracker-Chain` value that matches the resource path `order/clothing/myStore/5000`:
 
 ```rust
 curl --location --request POST 'http://localhost:8000/order/clothing/myStore/5000' \
@@ -137,24 +137,24 @@ curl --location --request POST 'http://localhost:8000/order/clothing/myStore/500
 --header 'Data-Tracker-Chain: W3siaWRlbnRpZmllciI6eyJkYXRhX2lkIjoib3JkZXJ+Y2xvdGhpbmd+bXlTdG9yZX41MDAwIiwiaW5kZXgiOjAsInRpbWVzdGFtcCI6MCwiYWN0b3JfaWQiOiIiLCJwcmV2aW91c19oYXNoIjoiMCJ9LCJoYXNoIjoiMTMzOTkzNzg5NjgyOTI0MTk5NzM2NDIzOTE5MDUwNDU1NjA2Mjc0Iiwibm9uY2UiOjV9XQ==' \
 --header 'Authorization: Basic aXN0b3JlX2FwcDpzZWNyZXQ=' \
 --data-raw '{
-	"product":"wool hat",
-	"quantity": 1,
-	"status":"new"
+    "product":"wool hat",
+    "quantity": 1,
+    "status":"new"
 }'
 ```
 
 You should be able to confirm the following items:
 
-#### Sourcing
+### Sourcing
 
 * `{"status":"ok"}` response
 * `./local_storage/clothing/myStore/5000` directory with a your DaaSDocument json file
 
-#### Genesis Processor
+### Genesis Processor
 
 ```rust
 [2020-11-09T19:52:44Z INFO  daas::service::processor] Putting document order~clothing~myStore~5000 in S3
-[2020-11-09T19:52:44Z INFO  daas::service::processor] Brokering document order~clothing~myStore~5000 ... 
+[2020-11-09T19:52:44Z INFO  daas::service::processor] Brokering document order~clothing~myStore~5000 ...
 ```
 
 Kafka topics dynamically created
@@ -171,14 +171,14 @@ order.clothing.iStore
 order.clothing.myStore
 ```
 
-#### Provisioning Processor
+### Provisioning Processor
 
 ```rust
 Order Number 5000 from the myStore has a status of "new"...
 Retreiving wool_hat file
 ```
 
-#### Reporting
+### Reporting
 
 ```javascript
 [{"orders":6,"product":"leather jacket"},{"orders":2,"product":"wool hat"}]

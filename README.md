@@ -4,7 +4,7 @@ description: Hands-On experience building a Test Data Generation Service Platfor
 
 # Building a Test Data Generation Service
 
-![](.gitbook/assets/cover_small.jpg)
+![](.gitbook/assets/tdg-cover.png)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 

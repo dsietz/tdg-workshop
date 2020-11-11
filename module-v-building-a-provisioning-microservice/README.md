@@ -1,6 +1,6 @@
 # Module V - Building a Provisioning Microservice
 
-In this module we will build a microservice that will 
+In this module we will build a microservice that will
 
 1. consume DaaSDocuments from the `order.clothing` topic
 2. sum the number of new clothing orders by product
