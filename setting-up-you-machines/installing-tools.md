@@ -15,7 +15,7 @@ sudo chmod +x workshop.sh
 ```
 
 ```text
-./workshop.sh
+./workshop.sh --workshop tdg
 ```
 
 ```text
