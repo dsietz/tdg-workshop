@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Hands-On experience building a Data as a Service Platform](README.md)
+* [Building a Test Data Generation Service](README.md)
 * [Set Up](setting-up-you-machines/README.md)
   * [Creating a Workstation](setting-up-you-machines/creating-a-workstation.md)
   * [Installing Tools](setting-up-you-machines/installing-tools.md)

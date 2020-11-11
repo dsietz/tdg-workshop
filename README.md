@@ -1,8 +1,8 @@
 ---
-description: Hands-On experience building a Data as a Service Platform
+description: Hands-On experience building a Test Data Generation Service Platform
 ---
 
-# Hands-On experience building a Data as a Service Platform
+# Building a Test Data Generation Service
 
 ![](.gitbook/assets/cover_small.jpg)
 
@@ -13,6 +13,4 @@ description: Hands-On experience building a Data as a Service Platform
 Virtual developer slices will be provided during the workshop.
 
 > virtual workstations kindly hosted by [IAPP.org](https://iapp.org/)
-
-
 
