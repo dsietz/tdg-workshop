@@ -8,6 +8,7 @@
   * [Congratulations](setting-up-you-machines/congratulations.md)
 * [Module I - Overview of the Test Data Generation Service](module-01/README.md)
   * [Section I - Overview](module-01/01-section-01.md)
+  * [Section II - Current State Design](module-01/section-ii-current-state-design.md)
   * [Section II - Data Sourcing](module-01/01-section-02.md)
   * [Section III - Data Flow](module-01/01-section-03.md)
   * [Section IV - Data Anaysis](module-01/01-section-04.md)
