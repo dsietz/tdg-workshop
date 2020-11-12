@@ -6,7 +6,7 @@
   * [Installing Tools](setting-up-you-machines/installing-tools.md)
   * [Starting Kafka](setting-up-you-machines/starting-kafka.md)
   * [Congratulations](setting-up-you-machines/congratulations.md)
-* [Module I - Overview of the Test Data Generation Service](module-01/README.md)
+* [Module I - Overview of the Test Data](module-01/README.md)
   * [Section I - Overview](module-01/01-section-01.md)
   * [Section II - Current State Design](module-01/section-ii-current-state-design.md)
   * [Section II - Data Sourcing](module-01/01-section-02.md)
