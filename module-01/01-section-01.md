@@ -17,5 +17,9 @@ Untimely Test Data can directly impact our ability to test our solutions and hin
 
 ### Subsets
 
+Too often, refreshing the Test Data is an cumbersome process. Because of data modeling constraints, \(e.g.: relational constraints\) and poorly automated designs, \(e.g.: database schema or table restores\) development teams find themselves _parasitically coupled_ by the data sources they share - even if they don't use the same data records. 
 
+### Repeatable
+
+We all know that tests fail - otherwise there wouldn't be a need for testing. Resetting Test Data back to its desired state is a basic property of any testing platform. One _sniff_ that can be used to identify this inability, is the continuous growth of data in the testing data source, \(e.g.: database size grows at a 15% rate per day\). This is because tester create new test data instead of reusing the data.   
 
