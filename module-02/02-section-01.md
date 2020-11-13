@@ -9,7 +9,7 @@ cd $HOME/environment
 Let first make sure the Rust is install correctly.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ rustup -V
+ArchConfWorkshopUser:~/environment/rust-tdg (master) $ rustup -V
 rustup 1.22.1 (b01adbbc3 2020-07-08)
 ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo -V
 cargo 1.47.0 (f3c7e066a 2020-08-28)
