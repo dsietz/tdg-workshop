@@ -16,7 +16,7 @@
   * [Section I - Create a Package](module-02/02-section-01.md)
   * [Section II - Creating a Library](module-02/02-section-02.md)
   * [Section III - Creating an Executable](module-02/02-section-03.md)
-  * [Section IV - Creating a Hello World RESTful Endpoint](module-02/02-section-04/README.md)
+  * [Section IV - Creating a Test Data Generation RESTful Endpoint](module-02/02-section-04/README.md)
     * [Section IV - manifest](module-02/02-section-04/02-section-04-1.md)
     * [Section IV - library](module-02/02-section-04/02-section-04-2.md)
     * [Section IV - module](module-02/02-section-04/02-section-04-3.md)

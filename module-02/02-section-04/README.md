@@ -1,9 +1,9 @@
-# Section IV - Creating a Hello World RESTful Endpoint
+# Section IV - Creating a Test Data Generation RESTful Endpoint
 
-In this section, we will be creating a Hello World RESTful Endpoint. This will require us to modify the following files:
+In this section, we will be creating a Test Data Generation RESTful Endpoint. This will require us to modify the following files:
 
 * `Cargo.toml` \(manifest\)
 * `src/lib.rs` \(library\)
-* `src/hello_world.rs` \(module\)
-* `src/bin/hello-world.rs` \(executable\)
+* `src/tdg_service.rs` \(module\)
+* `src/bin/tdg-service.rs` \(executable\)
 
