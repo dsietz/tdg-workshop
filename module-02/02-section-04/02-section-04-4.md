@@ -15,6 +15,7 @@ We start by first adding the `log` and `env_logger` crates to the `Cargo.toml` m
 log = "0.4"
 env_logger = "0.8"
 actix-web = "3"
+test-data-generation = "0.2.0"
 ```
 
 Next, we update the `lib.rs` file to include the logging creates and modules.
@@ -25,6 +26,7 @@ We place the `extern crate` declarations for these crates at the top \(so that t
 extern crate log;
 extern crate env_logger;
 extern crate actix_web;
+extern crate test_data_generation;
 ```
 
 The final `lib.rs` file should look like this:
@@ -33,10 +35,12 @@ The final `lib.rs` file should look like this:
 extern crate log;
 extern crate env_logger;
 extern crate actix_web;
+extern crate test_data_generation;
+
 
 static VER: &str = "v1";
 
-pub mod hello_world;
+pub mod tdg_service;
 ```
 
 ## Writing the executable
