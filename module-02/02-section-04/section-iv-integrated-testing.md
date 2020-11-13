@@ -60,10 +60,6 @@ async fn test_tdg_service_ok() {
     // call the service
     let resp = test::call_service(&mut app, req).await;
     assert!(resp.status().is_success());
-
-    // read response body
-    let body = test::read_body(resp).await;
-    assert_eq!(body, "Hello World!".to_string());
 }
 ```
 
@@ -84,10 +80,6 @@ async fn test_tdg_service_ok() {
     // call the service
     let resp = test::call_service(&mut app, req).await;
     assert!(resp.status().is_success());
-
-    // read response body
-    let body = test::read_body(resp).await;
-    assert_eq!(body, "Hello World!".to_string());
 }
 ```
 

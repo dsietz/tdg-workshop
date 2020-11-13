@@ -1,33 +1,16 @@
-# Section V - manifest
+# Section V - mdule
 
-> Cargo.toml
+> tdg\_service.toml
 
-At this point we should already have all the dependencies defined in our manifest.
+To make changes to the logic of our service, we only need to modify the module that the binary service calls.
+
+Let's replace the `Hello Wolrd!` message with some generated test data.
+
+We first make our `use` declarations.
 
 ```rust
-[package]
-name = "rust-tdg"
-version = "0.1.0"
-authors = ["ec2-user"]
-edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[lib]
-name = "myapp"
-path = "src/lib.rs"
-
-[[bin]]
-name = "tdg_service"
-path = "src/bin/tdg-service.rs"
-
-[dependencies]
-log = "0.4"
-env_logger = "0.8"
-actix-web = "3"
-test-data-generation = "0.2.0"
-
-[dev-dependencies]
-actix-rt = "1.1"
+use test_data_generation::data_sample_parser::DataSampleParser;
 ```
+
+We then modify our `index` function to load a Data Sample Pasrter file \(`Profile`\) and generate some test data.
 

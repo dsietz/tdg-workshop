@@ -23,7 +23,7 @@
     * [Section IV - integrated testing](module-02/02-section-04/section-iv-integrated-testing.md)
     * [Section IV - executable](module-02/02-section-04/02-section-04-4.md)
   * [Section V - Test Data Generation Demo](module-02/section-v-test-data-generation-demo/README.md)
-    * [Section V - manifest](module-02/section-v-test-data-generation-demo/section-v-manifest.md)
+    * [Section V - mdule](module-02/section-v-test-data-generation-demo/section-v-manifest.md)
 * [Module III - Building a RESTful Endpoint for Sourcing Data](module-04/README.md)
   * [Section I - Overview](module-04/module-03.md)
   * [Section II - manifest](module-04/03-section-01-1.md)
