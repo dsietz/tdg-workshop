@@ -26,21 +26,21 @@ info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.47.0 (18bf6b4f0 2020-10-07)
 ```
 
-Create the `rust-daas`package
+Create the `rust-tdg`package
 
 ```text
-cargo +stable new rust-daas --lib
+cargo +stable new rust-tdg --lib
 ```
 
 ```text
-ArchConfWorkshopUser:~/environment $ cargo +stable new rust-daas --lib
-     Created library `rust-daas` package
+ArchConfWorkshopUser:~/environment $ cargo +stable new rust-tdg --lib
+     Created library `rust-tdg` package
 ```
 
 Change directory to the rust-daas project.
 
 ```text
-cd rust-daas/
+cd rust-tdg/
 ```
 
 cargo has generated ...
