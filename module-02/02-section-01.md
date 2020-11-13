@@ -9,11 +9,17 @@ cd $HOME/environment
 Let first make sure the Rust is install correctly.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-tdg (master) $ rustup -V
+ArchConfWorkshopUser:~/environment $ rustup -V
 rustup 1.22.1 (b01adbbc3 2020-07-08)
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo -V
+```
+
+```text
+ArchConfWorkshopUser:~/environment $ cargo -V
 cargo 1.47.0 (f3c7e066a 2020-08-28)
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ rustup default stable
+```
+
+```text
+ArchConfWorkshopUser:~/environment $ rustup default stable
 info: using existing install for 'stable-x86_64-unknown-linux-gnu'
 info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
 
