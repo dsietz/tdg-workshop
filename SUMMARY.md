@@ -27,7 +27,7 @@
     * [Section V - executable](module-02/section-v-test-data-generation-demo/section-v-executable.md)
 * [Module III - Building a Data Sample Analyzer](module-04/README.md)
   * [Section I - manifest](module-04/03-section-01-1.md)
-  * [Section II - executable](module-04/03-section-01-2.md)
+  * [Section II - executable - consuming](module-04/03-section-01-2.md)
   * [Section IV - starting the service](module-04/section-iv-starting-the-service.md)
   * [Section V - service testing](module-04/04-section-05.md)
 * [Module IV - Building a Genesis Microservice for Processing the Sourced Data](module-05/README.md)

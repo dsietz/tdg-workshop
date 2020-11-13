@@ -1,4 +1,4 @@
-# Section II - executable
+# Section II - executable - consuming
 
 > sourcing.rs
 
