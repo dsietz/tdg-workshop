@@ -3,16 +3,17 @@
 The Rust package comes automatically setup with a unit test in the `src/lib.rs` file. You can build and test your package in one command.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo test
-    Finished test [unoptimized + debuginfo] target(s) in 0.00s
-     Running target/debug/deps/rust_daas-393ccbe957dd9f3a
+ArchConfWorkshopUser:~/environment/rust-tdg (master) $ cargo test
+   Compiling rust-tdg v0.1.0 (/home/ec2-user/environment/rust-tdg)
+    Finished test [unoptimized + debuginfo] target(s) in 2.31s
+     Running target/debug/deps/rust_tdg-ca5c114553213fc8
 
 running 1 test
 test tests::it_works ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
-   Doc-tests rust-daas
+   Doc-tests rust-tdg
 
 running 0 tests
 
@@ -29,13 +30,13 @@ name = "myapp"
 path = "src/lib.rs"
 ```
 
-try to rerun the build and test and notice that the library name changed from **rust-daas** to **myapp**.
+try to rerun the build and test and notice that the library name changed from **rust-tdg** to **myapp**.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo test
-   Compiling rust-daas v0.1.0 (/home/ec2-user/environment/rust-daas)
-    Finished test [unoptimized + debuginfo] target(s) in 0.58s
-     Running target/debug/deps/myapp-8ec378e59bc20e80
+ArchConfWorkshopUser:~/environment/rust-tdg (master) $ cargo test
+   Compiling rust-tdg v0.1.0 (/home/ec2-user/environment/rust-tdg)
+    Finished test [unoptimized + debuginfo] target(s) in 0.29s
+     Running target/debug/deps/myapp-3a0fcee6b881b370
 
 running 1 test
 test tests::it_works ... ok
