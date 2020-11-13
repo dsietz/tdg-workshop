@@ -1,6 +1,6 @@
 # Section IV - library
 
-> lib.rs
+> [lib.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/lib.rs)
 
 The `lib.rs` file is our centralized library file. This file is where globally shared functions, constants and variables are located. It is also where we include modules that make up the library.
 
@@ -20,7 +20,6 @@ At the very top of the file, add [declarations of dependencies ](https://doc.rus
 
 ```rust
 extern crate actix_web;
-extern crate test_data_generation;
 ```
 
 In top portion of the file \(where the global variables would be located after the `extern crates`\), add the following global variable.
@@ -32,40 +31,32 @@ static VER: &str = "v1";
 At the bottom of the file, add the following module as part of the library.
 
 ```rust
-pub mod tdg_service;
+pub mod hello_world;
 ```
 
 > **NOTE**: If you build the code right now, it would raise an error that the module cannot be found.
 >
 > ```text
-> ArchConfWorkshopUser:~/environment/rust-tdg/target/debug (master) $ cargo test
->    Compiling rust-tdg v0.1.0 (/home/ec2-user/environment/rust-tdg)
-> error[E0583]: file not found for module `tdg_service`
->  --> src/lib.rs:7:1
+> ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo build
+>    Compiling rust-daas v0.1.0 (/home/ec2-user/environment/rust-daas)
+> error[E0583]: file not found for module `hello_world`
+>  --> src/lib.rs:5:1
 >   |
-> 7 | pub mod tdg_service;
+> 5 | pub mod hello_world;
 >   | ^^^^^^^^^^^^^^^^^^^^
 >   |
->   = help: to create the module `tdg_service`, create file "src/tdg_service.rs"
+>   = help: to create the module `hello_world`, create file "src/hello_world.rs"
 >
-> error[E0583]: file not found for module `tdg_service`
->  --> src/lib.rs:7:1
+> error[E0463]: can't find crate for `actix_web`
+>  --> src/lib.rs:1:1
 >   |
-> 7 | pub mod tdg_service;
->   | ^^^^^^^^^^^^^^^^^^^^
->   |
->   = help: to create the module `tdg_service`, create file "src/tdg_service.rs"
+> 1 | extern crate actix_web;
+>   | ^^^^^^^^^^^^^^^^^^^^^^^ can't find crate
 >
-> error: aborting due to previous error
+> error: aborting due to 2 previous errors
 >
-> For more information about this error, try `rustc --explain E0583`.
-> error: aborting due to previous error
->
-> For more information about this error, try `rustc --explain E0583`.
-> error: could not compile `rust-tdg`.
->
-> To learn more, run the command again with --verbose.
-> warning: build failed, waiting for other jobs to finish...
-> error: build failed
+> Some errors have detailed explanations: E0463, E0583.
+> For more information about an error, try `rustc --explain E0463`.
+> error: could not compile `rust-daas`.
 > ```
 

@@ -14,12 +14,7 @@ extern crate clap;
 We then declare the modules we will be using.
 
 ```rust
-use daas::service::listener::{DaaSListener, DaaSListenerService};
-use daas::service::extractor::{Base64Author};
-use pbd::dua::middleware::actix::*;
-use pbd::dtc::middleware::actix::*;
-use actix_web::{web, App, HttpServer};
-use actix_web::middleware::Logger;
+
 ```
 
 Finally, we write the main function that will be called.
