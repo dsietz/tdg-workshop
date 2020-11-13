@@ -18,6 +18,19 @@ use kafka::consumer::{Consumer, FetchOffset, GroupOffsetStorage};
 use clap::{Arg, App};
 ```
 
+Next, we add some supportive functions outside of the `main` function.
+
+```rust
+fn make_consumer(data_topic: String) -> Result<Consumer, kafka::Error> {
+    Consumer::from_hosts(vec!("localhost:9092".to_owned()))
+      .with_topic(data_topic.to_owned())
+      .with_fallback_offset(FetchOffset::Earliest)
+      .with_group("my-group".to_owned())
+      .with_offset_storage(GroupOffsetStorage::Kafka)
+      .create()
+}
+```
+
 Finally, we write the main function that will be called.
 
 ```rust
@@ -35,12 +48,7 @@ fn main() {
     let data_topic = matches.value_of("topic").unwrap();
     println!("Listening to the {} topic ...", data_topic);
     
-    let mut consumer = match Consumer::from_hosts(vec!("localhost:9092".to_owned()))
-      .with_topic(data_topic.to_owned())
-      .with_fallback_offset(FetchOffset::Earliest)
-      .with_group("my-group".to_owned())
-      .with_offset_storage(GroupOffsetStorage::Kafka)
-      .create() {
+    let mut consumer = match make_consumer(data_topic.to_string()) {
           Ok(c) => c,
           Err(err) => {
             panic!("{}",err);  
@@ -68,6 +76,15 @@ extern crate clap;
 use kafka::consumer::{Consumer, FetchOffset, GroupOffsetStorage};
 use clap::{Arg, App};
 
+fn make_consumer(data_topic: String) -> Result<Consumer, kafka::Error> {
+    Consumer::from_hosts(vec!("localhost:9092".to_owned()))
+      .with_topic(data_topic.to_owned())
+      .with_fallback_offset(FetchOffset::Earliest)
+      .with_group("my-group".to_owned())
+      .with_offset_storage(GroupOffsetStorage::Kafka)
+      .create()
+}
+
 fn main() {
     let matches = App::new("Sample Data Analyzer")
                           .arg(Arg::with_name("topic")
@@ -82,12 +99,7 @@ fn main() {
     let data_topic = matches.value_of("topic").unwrap();
     println!("Listening to the {} topic ...", data_topic);
     
-    let mut consumer = match Consumer::from_hosts(vec!("localhost:9092".to_owned()))
-      .with_topic(data_topic.to_owned())
-      .with_fallback_offset(FetchOffset::Earliest)
-      .with_group("my-group".to_owned())
-      .with_offset_storage(GroupOffsetStorage::Kafka)
-      .create() {
+    let mut consumer = match make_consumer(data_topic.to_string()) {
           Ok(c) => c,
           Err(err) => {
             panic!("{}",err);  
