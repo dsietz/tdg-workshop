@@ -1,6 +1,6 @@
 # Section IV - library
 
-> [lib.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/lib.rs)
+> lib.rs
 
 The `lib.rs` file is our centralized library file. This file is where globally shared functions, constants and variables are located. It is also where we include modules that make up the library.
 
