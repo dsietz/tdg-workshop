@@ -19,5 +19,11 @@ ArchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh
 Abbin
 ```
 
-Notice that the name generated is based on the 
+{% hint style="warning" %}
+Because the `profile`  was generated from a small data sample \(just a few names all starting with `Aa`\), the test data generated is realistically random, but did generate original names by chance. 
+
+The larger the data sample used to create the profile, the more realistic the Test Data and less chance of generating any original data.
+{% endhint %}
+
+
 
