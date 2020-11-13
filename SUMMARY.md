@@ -11,7 +11,7 @@
   * [Section II - Current State Design](module-01/section-ii-current-state-design.md)
   * [Section III - Privacy Design Strategies](module-01/section-iii-privacy-design-strategies.md)
   * [Section IV - Conceptual Building a Data Profile](module-01/01-section-04.md)
-  * [Section V - Test Data Platform](module-01/section-v-test-data-platform.md)
+  * [Section V - Test Data Generation Platform](module-01/section-v-test-data-platform.md)
 * [Module II - Test Data Generation Design](module-ii-test-data-generation-design/README.md)
   * [Section III - Data Flow](module-ii-test-data-generation-design/01-section-03.md)
   * [Section II - Data Sourcing](module-ii-test-data-generation-design/01-section-02.md)

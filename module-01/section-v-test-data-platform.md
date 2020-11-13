@@ -1,4 +1,4 @@
-# Section V - Test Data Platform
+# Section V - Test Data Generation Platform
 
 To build a Test Data Generation platform, we will need to provide a way to: 
 
