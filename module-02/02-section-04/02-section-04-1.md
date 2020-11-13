@@ -8,6 +8,5 @@ In the **\[dependencies\]** section of the `Cargo.toml` file add the following p
 
 ```rust
 actix-web = "3"
-test-data-generation = "0.2.0"
 ```
 
