@@ -1,14 +1,14 @@
-# Section III - executable
+# Section II - executable
 
-> [sourcing.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/sourcing.rs)
+> sourcing.rs
 
-Since the SDKs contain all the modules we will need for our web service, we can go right to writing our executable: `src/bin/sourcing.rs`.
+We first need to create the executable file: `src/bin/tdg-analyzer.rs`.
 
 We start by declaring our dependent external crates
 
 ```rust
-extern crate daas;
-extern crate actix_web;
+extern crate kafka;
+extern crate clap;
 ```
 
 We then declare the modules we will be using.
