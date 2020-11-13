@@ -104,17 +104,17 @@ mod tests {
 If we rerun our test, it will now pass.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo test
-   Compiling rust-daas v0.1.0 (/home/ec2-user/environment/rust-daas)
-    Finished test [unoptimized + debuginfo] target(s) in 0.89s
-     Running target/debug/deps/myapp-deab36d0847aeb68
+ArchConfWorkshopUser:~/environment/rust-tdg/target/debug (master) $ cargo test
+   Compiling rust-tdg v0.1.0 (/home/ec2-user/environment/rust-tdg)
+    Finished test [unoptimized + debuginfo] target(s) in 1.41s
+     Running deps/myapp-129460598e9ff740
 
 running 1 test
-test hello_world::tests::test_get_service_root ... ok
+test tdg_service::tests::test_get_service_root ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
-     Running target/debug/deps/hello_world-c97b0cb1d60cefb2
+     Running deps/tdg_service-0fa4453d5955ba5c
 
 running 0 tests
 
@@ -133,7 +133,7 @@ We will do the same for the `get_service_path()` function.
 use super::*;
 
 pub fn get_service_root() -> String {
-    format!("/hello/{}", VER)
+    format!("/tdg/{}", VER)
 }
 
 pub fn get_service_path() -> String {
@@ -146,12 +146,12 @@ mod tests {
 
     #[test]
     fn test_get_service_root() {
-        assert_eq!(get_service_root(), format!("/hello/{}", VER));
+        assert_eq!(get_service_root(), format!("/tdg/{}", VER));
     }
-
+    
     #[test]
     fn test_get_service_path() {
-        assert_eq!(get_service_path(), format!("/hello/{}/", VER));
+        assert_eq!(get_service_path(), format!("/tdg/{}/", VER));
     }
 }
 ```
