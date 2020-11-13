@@ -1,19 +1,5 @@
 # Section IV - starting the service
 
-### Produce to the Kafka Topic
-
-{% hint style="info" %}
-NOTE: Make sure that Zookeeper and Kafka are running.
-{% endhint %}
-
-In a new terminal, start up a Kafka producer.
-
-```text
-kafka_2.13-2.6.0/bin/kafka-console-producer.sh --topic names --bootstrap-server localhost:9092
-```
-
-## STOPPED HERE
-
 We are now ready to start the RESTful service that will listen for data that needs to be sourced and feeds it to the event flow.
 
 There are 2 ways to start the service.
