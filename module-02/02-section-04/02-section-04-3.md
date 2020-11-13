@@ -167,18 +167,18 @@ mod tests {
    #[allow(unused_imports)]
    use actix_web::{test};
 
-   #[test]
+    #[test]
     fn test_get_service_root() {
-        assert_eq!(get_service_root(), format!("/hello/{}", VER));
+        assert_eq!(get_service_root(), format!("/tdg/{}", VER));
     }
-
+    
     #[test]
     fn test_get_service_path() {
-        assert_eq!(get_service_path(), format!("/hello/{}/", VER));
+        assert_eq!(get_service_path(), format!("/tdg/{}/", VER));
     }
-
-   #[test]
-    fn hello_response() {
+    
+    #[test]
+    fn ok_response() {
         let req = test::TestRequest::with_header("content-type", "text/plain")
         .to_http_request();
 
@@ -208,7 +208,7 @@ use actix_web::{HttpRequest, HttpResponse };
 use actix_web::http::{StatusCode};
 
 pub fn get_service_root() -> String {
-    format!("/hello/{}", VER)
+    format!("/tdg/{}", VER)
 }
 
 pub fn get_service_path() -> String {
@@ -220,23 +220,24 @@ pub fn index(_req: HttpRequest) -> HttpResponse {
     .body("Hello World!".to_string())
 }
 
+#[cfg(test)]
 mod tests {
    use super::*;
    #[allow(unused_imports)]
    use actix_web::{test};
 
-   #[test]
+    #[test]
     fn test_get_service_root() {
-        assert_eq!(get_service_root(), format!("/hello/{}", VER));
+        assert_eq!(get_service_root(), format!("/tdg/{}", VER));
     }
-
+    
     #[test]
     fn test_get_service_path() {
-        assert_eq!(get_service_path(), format!("/hello/{}/", VER));
+        assert_eq!(get_service_path(), format!("/tdg/{}/", VER));
     }
-
-   #[test]
-    fn hello_response() {
+    
+    #[test]
+    fn ok_response() {
         let req = test::TestRequest::with_header("content-type", "text/plain")
         .to_http_request();
 
