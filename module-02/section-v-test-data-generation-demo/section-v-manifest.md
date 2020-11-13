@@ -1,4 +1,4 @@
-# Section V - mdule
+# Section V - module
 
 > tdg\_service.toml
 
@@ -12,5 +12,21 @@ We first make our `use` declarations.
 use test_data_generation::data_sample_parser::DataSampleParser;
 ```
 
-We then modify our `index` function to load a Data Sample Pasrter file \(`Profile`\) and generate some test data.
+Next, add a global constant under the `use` declarations that will be referenced in our funciton.
+
+```rust
+static WORKSPACE_LOCAL_STORAGE: &str = "../scripts";
+```
+
+We then modify our `index` function to load a Data Sample Parser file \(`Profile`\) and generate some test data.
+
+```rust
+pub fn index(_req: HttpRequest) -> HttpResponse {
+    let dsp_file = &format!("{}/{}", WORKSPACE_LOCAL_STORAGE, "sample-01-dsp");
+    let mut dsp = DataSampleParser::from_file(&dsp_file);
+
+    HttpResponse::build(StatusCode::OK)
+    .body(dsp.generate_record()[0].to_string())
+}
+```
 
