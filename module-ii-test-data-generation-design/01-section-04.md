@@ -10,3 +10,7 @@ The MDP can be applied to programmatically build a realistic last name of a pers
 
 ![](../.gitbook/assets/tdg-04.jpg)
 
+By applying the MDP, we can analyze a data sample and build an algorithm that we can reuse to build test data.
+
+![](../.gitbook/assets/tdg-05.jpg)
+
