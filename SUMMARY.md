@@ -25,7 +25,7 @@
   * [Section V - Test Data Generation Demo](module-02/section-v-test-data-generation-demo/README.md)
     * [Section V - module](module-02/section-v-test-data-generation-demo/section-v-manifest.md)
     * [Section V - executable](module-02/section-v-test-data-generation-demo/section-v-executable.md)
-* [Module III - Building a Data Source](module-04/README.md)
+* [Module III - Building a Data Sample Analyzer](module-04/README.md)
   * [Section I - Overview](module-04/module-03.md)
   * [Section II - manifest](module-04/03-section-01-1.md)
   * [Section III - executable](module-04/03-section-01-2.md)
