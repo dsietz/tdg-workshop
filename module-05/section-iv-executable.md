@@ -1,100 +1,91 @@
-# Section I - executable
+# Section I - module
 
-> tdg-service.rs
+> tdg\_service.rs
 
-Since .
+We will begin by first adding a new function to handle the new resource path that supports path parameters. Open the `bin/tdg_service.rs` file for editing. 
 
-We start by declaring our dependent external crates
+We will begin by writing our new unit test. In the nested `test` module, add the following test function.
 
 ```rust
-extern crate daas;
-extern crate kafka;
-extern crate rusoto_core;
+    #[test]
+    fn test_get_topic_service_path() {
+        assert_eq!(get_service_path_topic(), format!("/tdg/{}/{{topic}}", VER));
+    }
 ```
 
-We then declare the modules we will be using.
+The `tests` module should look like this:
 
 ```rust
-use std::io;
-use rusoto_core::Region;
-use kafka::consumer::{FetchOffset, GroupOffsetStorage};
-use daas::service::processor::{DaasGenesisProcessor, DaaSGenesisProcessorService};
-use daas::storage::s3::{S3BucketManager, S3BucketMngr};
-```
+#[cfg(test)]
+mod tests {
+   use super::*;
+   #[allow(unused_imports)]
+   use actix_web::{test};
 
-We need to provide a constant and a supportive function.
+    #[test]
+    fn test_get_service_root() {
+        assert_eq!(get_service_root(), format!("/tdg/{}", VER));
+    }
+    
+    #[test]
+    fn test_get_service_path() {
+        assert_eq!(get_service_path(), format!("/tdg/{}/", VER));
+    }
+    
+    #[test]
+    fn test_get_topic_service_path() {
+        assert_eq!(get_service_path_topic(), format!("/tdg/{}/{{topic}}", VER));
+    }
+    
+    #[test]
+    fn ok_response() {
+        let req = test::TestRequest::with_header("content-type", "text/plain")
+        .to_http_request();
 
-```rust
-// NOTE: Modify the Bucket name to match your bucket
-// Credentials are read from the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
-pub const BUCKET_NAME: &'static str = "iapp-archconf-workshop";
-
-fn get_bucket() -> S3BucketMngr {
-    S3BucketMngr::new(Region::UsEast1, BUCKET_NAME.to_string())
+        let resp = index(req);
+        assert_eq!(resp.status(), StatusCode::OK);
+    }
 }
 ```
 
-Finally, we write the main function that will be called.
+{% hint style="warning" %}
+If you try to run `cargo test` it should fail.
+{% endhint %}
+
+Now we start writing our code by defining the `use` declarations
 
 ```rust
-fn main() {
-    std::env::set_var("RUST_LOG", "info");
-    env_logger::init();
-    let hosts = vec!("localhost:9092".to_string());
+use test_data_generation::{Profile, shared};
+```
 
-    let stopper = DaasGenesisProcessor::run(hosts, FetchOffset::Earliest, GroupOffsetStorage::Kafka, get_bucket());
+Next, define a global constant for where we will be reading the `profile` files.
 
-    println!("Genesis processor is running ...");
-    println!("Press [Enter] to stop the Genesis processor.");
+```rust
+static WORKSPACE_LOCAL_STORAGE: &str = "../profiles";
+```
 
-    let mut input = String::new();
-    match io::stdin().read_line(&mut input) {
-        Ok(_n) => {
-            DaasGenesisProcessor::stop(stopper);
-        }
-        Err(error) => println!("error: {}", error),
-    }    
+Keeping with format, we will add a function that returns the path to our new resource service.
+
+```rust
+pub fn get_service_path_topic() -> String {
+    get_service_root() + "/{topic}"
 }
 ```
 
-When you are finished, the `genesis.rs` file should look like this:
+So as to not impact our default resource path `/`, we will add a new function that supports our new resource path `/{topic}`
 
 ```rust
-extern crate daas;
-extern crate kafka;
-extern crate rusoto_core;
+#[get("/tdg/v1/{topic}")] 
+pub fn profile(web::Path(topic): web::Path<String>) -> HttpResponse {
+    let profile_file = shared::string_to_static_str(format!("{}/{}", WORKSPACE_LOCAL_STORAGE, topic));
+    let mut profile = Profile::from_file(&profile_file);
 
-use std::io;
-use rusoto_core::Region;
-use kafka::consumer::{FetchOffset, GroupOffsetStorage};
-use daas::service::processor::{DaasGenesisProcessor, DaaSGenesisProcessorService};
-use daas::storage::s3::{S3BucketManager, S3BucketMngr};
-
-// NOTE: Modify the Bucket name to match your bucket
-// Credentials are read from the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
-pub const BUCKET_NAME: &'static str = "iapp-archconf-workshop";
-
-fn get_bucket() -> S3BucketMngr {
-    S3BucketMngr::new(Region::UsEast1, BUCKET_NAME.to_string())
-}
-
-fn main() {
-    std::env::set_var("RUST_LOG", "info");
-    env_logger::init();
-    let hosts = vec!("localhost:9092".to_string());
-
-    let stopper = DaasGenesisProcessor::run(hosts, FetchOffset::Earliest, GroupOffsetStorage::Kafka, get_bucket());
-
-    println!("Genesis processor is running ...");
-    println!("Press [Enter] to stop the Genesis processor.");
-
-    let mut input = String::new();
-    match io::stdin().read_line(&mut input) {
-        Ok(_n) => {
-            DaasGenesisProcessor::stop(stopper);
-        }
-        Err(error) => println!("error: {}", error),
-    }    
+    HttpResponse::build(StatusCode::OK)
+    .body(profile.generate().to_string())
 }
 ```
+
+{% hint style="info" %}
+Run `cargo test` to ensure everything is passing.
+{% endhint %}
 
