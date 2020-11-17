@@ -1,6 +1,6 @@
 # Section II - executable - consuming
 
-> sourcing.rs
+> tdg-analyzer.rs
 
 We first need to create the executable file: `src/bin/tdg-analyzer.rs`.
 
@@ -16,6 +16,8 @@ We then declare the modules we will be using.
 ```rust
 use kafka::consumer::{Consumer, FetchOffset, GroupOffsetStorage};
 use clap::{Arg, App};
+use std::path::Path;
+use test_data_generation::{Profile, shared};
 ```
 
 Next, we add some supportive functions outside of the `main` function.
@@ -28,6 +30,26 @@ fn make_consumer(data_topic: String) -> Result<Consumer, kafka::Error> {
       .with_group("my-group".to_owned())
       .with_offset_storage(GroupOffsetStorage::Kafka)
       .create()
+}
+```
+
+```rust
+fn analyse_data(topic: &str, data: &str) -> Result<bool, std::io::Error>{
+  let profile_file = shared::string_to_static_str(format!("{}/{}", WORKSPACE_LOCAL_STORAGE, topic));
+  let mut profile = match Path::new(&format!("{}/{}.json", WORKSPACE_LOCAL_STORAGE, topic)).exists() {
+    true => {
+      // use existing file
+      Profile::from_file(&profile_file)
+    },
+    false => {
+      // create new file
+      println!("Creating new profile: {}",topic);
+      Profile::new_with_id(topic.to_string())
+    },
+  };
+  profile.analyze(&data);
+  profile.pre_generate();
+  profile.save(&profile_file)
 }
 ```
 
@@ -58,7 +80,17 @@ fn main() {
     loop {
       for ms in consumer.poll().unwrap().iter() {
         for m in ms.messages() {
-          println!("{}", String::from_utf8(m.value.to_vec()).unwrap());
+          let data = String::from_utf8(m.value.to_vec()).unwrap();
+          println!("{}", data);
+          match analyse_data(data_topic, &data) {
+            Ok(_) =>{
+              //do nothing
+              println!("Analyzed the data.");
+            },
+            Err(_err) => {
+              println!("Unable to analyze the data for the topic {}!", data_topic);
+            },
+          }
         }
         consumer.consume_messageset(ms);
       }
@@ -75,6 +107,10 @@ extern crate clap;
 
 use kafka::consumer::{Consumer, FetchOffset, GroupOffsetStorage};
 use clap::{Arg, App};
+use std::path::Path;
+use test_data_generation::{Profile, shared};
+
+static WORKSPACE_LOCAL_STORAGE: &str = "../profiles";
 
 fn make_consumer(data_topic: String) -> Result<Consumer, kafka::Error> {
     Consumer::from_hosts(vec!("localhost:9092".to_owned()))
@@ -83,6 +119,24 @@ fn make_consumer(data_topic: String) -> Result<Consumer, kafka::Error> {
       .with_group("my-group".to_owned())
       .with_offset_storage(GroupOffsetStorage::Kafka)
       .create()
+}
+
+fn analyse_data(topic: &str, data: &str) -> Result<bool, std::io::Error>{
+  let profile_file = shared::string_to_static_str(format!("{}/{}", WORKSPACE_LOCAL_STORAGE, topic));
+  let mut profile = match Path::new(&format!("{}/{}.json", WORKSPACE_LOCAL_STORAGE, topic)).exists() {
+    true => {
+      // use existing file
+      Profile::from_file(&profile_file)
+    },
+    false => {
+      // create new file
+      println!("Creating new profile: {}",topic);
+      Profile::new_with_id(topic.to_string())
+    },
+  };
+  profile.analyze(&data);
+  profile.pre_generate();
+  profile.save(&profile_file)
 }
 
 fn main() {
@@ -109,7 +163,17 @@ fn main() {
     loop {
       for ms in consumer.poll().unwrap().iter() {
         for m in ms.messages() {
-          println!("{}", String::from_utf8(m.value.to_vec()).unwrap());
+          let data = String::from_utf8(m.value.to_vec()).unwrap();
+          println!("{}", data);
+          match analyse_data(data_topic, &data) {
+            Ok(_) =>{
+              //do nothing
+              println!("Analyzed the data.");
+            },
+            Err(_err) => {
+              println!("Unable to analyze the data for the topic {}!", data_topic);
+            },
+          }
         }
         consumer.consume_messageset(ms);
       }

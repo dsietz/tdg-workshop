@@ -9,32 +9,38 @@ cd $HOME/environment
 Let first make sure the Rust is install correctly.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-tdg (master) $ rustup -V
+ArchConfWorkshopUser:~/environment $ rustup -V
 rustup 1.22.1 (b01adbbc3 2020-07-08)
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo -V
+```
+
+```text
+ArchConfWorkshopUser:~/environment $ cargo -V
 cargo 1.47.0 (f3c7e066a 2020-08-28)
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ rustup default stable
+```
+
+```text
+ArchConfWorkshopUser:~/environment $ rustup default stable
 info: using existing install for 'stable-x86_64-unknown-linux-gnu'
 info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
 
   stable-x86_64-unknown-linux-gnu unchanged - rustc 1.47.0 (18bf6b4f0 2020-10-07)
 ```
 
-Create the `rust-daas`package
+Create the `rust-tdg`package
 
 ```text
-cargo +stable new rust-daas --lib
+cargo +stable new rust-tdg --lib
 ```
 
 ```text
-ArchConfWorkshopUser:~/environment $ cargo +stable new rust-daas --lib
-     Created library `rust-daas` package
+ArchConfWorkshopUser:~/environment $ cargo +stable new rust-tdg --lib
+     Created library `rust-tdg` package
 ```
 
 Change directory to the rust-daas project.
 
 ```text
-cd rust-daas/
+cd rust-tdg/
 ```
 
 cargo has generated ...
