@@ -12,7 +12,9 @@ async fn main() -> std::io::Result<()> {
         .wrap(Logger::new("%a %{User-Agent}i"))
         .route(
             &tdg_service::get_service_path(), 
-            web::get().to(tdg_service::index)))
+            web::get().to(tdg_service::index))
+        .service(tdg_service::profile)
+        )
         .bind("127.0.0.1:7999")?
         .run()
         .await

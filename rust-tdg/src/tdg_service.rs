@@ -65,16 +65,4 @@ mod tests {
         let resp = index(req);
         assert_eq!(resp.status(), StatusCode::OK);
     }
-    /*
-    #[test]
-    fn profile_response() {
-        let req = test::TestRequest::with_header("content-type", "text/plain")
-        .uri("/names")
-        .param("topic","names")
-        .to_request();
-
-        let resp = profile(req);
-        assert_eq!(resp.status(), StatusCode::OK);
-    }
-    */
 }
