@@ -66,7 +66,7 @@ fn main() {
               //do nothing
               println!("Analyzed the data.");
             },
-            Err(err) => {
+            Err(_err) => {
               println!("Unable to analyze the data for the topic {}!", data_topic);
             },
           }
