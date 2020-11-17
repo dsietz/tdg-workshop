@@ -1,8 +1,8 @@
-# Section III - executable
+# Section I - executable
 
-> genesis.rs
+> tdg-service.rs
 
-Since the SDKs contain all the modules we will need for our web service, we can go right to writing our executable: `src/bin/genesis.rs`.
+Since .
 
 We start by declaring our dependent external crates
 

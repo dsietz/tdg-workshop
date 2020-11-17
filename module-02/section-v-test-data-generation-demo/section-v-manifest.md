@@ -2,7 +2,7 @@
 
 > tdg\_service.toml
 
-To make changes to the logic of our service, we only need to modify the module that the binary service calls.
+To make changes to the logic of our service, we only need to modify the `tdg_service.rs` module that the binary service calls.
 
 Let's replace the `Hello Wolrd!` message with some generated test data.
 
