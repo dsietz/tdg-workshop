@@ -9,10 +9,8 @@ First login to the AWS Console. Open your browser and navigate to teh AWS Cloud9
 [https://us-east-2.console.aws.amazon.com/cloud9/home/product](https://us-east-2.console.aws.amazon.com/cloud9/home/product)
 
 > NOTE: Your instructor will provide you with the login information.
-
-{% hint style="danger" %}
-> Make sure you are in the `US East N. Virginia (us-east-1)` region
-{% endhint %}
+>
+> IMPORTANT - Make sure you are in the `US East N. Virginia (us-east-1)` region
 
 Click on the `Create Environment` button
 
