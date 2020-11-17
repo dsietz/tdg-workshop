@@ -1,7 +1,8 @@
 use super::*;
-use actix_web::{HttpRequest, HttpResponse };
+use actix_web::{get, web, HttpRequest, HttpResponse};
 use actix_web::http::{StatusCode};
 use test_data_generation::data_sample_parser::DataSampleParser;
+use test_data_generation::{Profile, shared};
 
 static WORKSPACE_LOCAL_STORAGE: &str = "../profiles";
 
@@ -12,6 +13,20 @@ pub fn get_service_root() -> String {
 pub fn get_service_path() -> String {
     get_service_root() + "/"
 }
+
+pub fn get_service_path_topic() -> String {
+    get_service_root() + "/{topic}"
+}
+
+#[get("/tdg/v1/{topic}")] 
+pub fn profile(web::Path(topic): web::Path<String>) -> HttpResponse {
+    let profile_file = shared::string_to_static_str(format!("{}/{}", WORKSPACE_LOCAL_STORAGE, topic));
+    let mut profile = Profile::from_file(&profile_file);
+
+    HttpResponse::build(StatusCode::OK)
+    .body(profile.generate().to_string())
+}
+
 
 pub fn index(_req: HttpRequest) -> HttpResponse {
     let dsp_file = &format!("{}/{}", WORKSPACE_LOCAL_STORAGE, "sample-01-dsp");
@@ -38,6 +53,11 @@ mod tests {
     }
     
     #[test]
+    fn test_get_topic_service_path() {
+        assert_eq!(get_service_path_topic(), format!("/tdg/{}/{{topic}}", VER));
+    }
+    
+    #[test]
     fn ok_response() {
         let req = test::TestRequest::with_header("content-type", "text/plain")
         .to_http_request();
@@ -45,4 +65,16 @@ mod tests {
         let resp = index(req);
         assert_eq!(resp.status(), StatusCode::OK);
     }
+    /*
+    #[test]
+    fn profile_response() {
+        let req = test::TestRequest::with_header("content-type", "text/plain")
+        .uri("/names")
+        .param("topic","names")
+        .to_request();
+
+        let resp = profile(req);
+        assert_eq!(resp.status(), StatusCode::OK);
+    }
+    */
 }
