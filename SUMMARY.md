@@ -29,7 +29,7 @@
   * [Section I - manifest](module-04/03-section-01-1.md)
   * [Section II - executable - consuming](module-04/03-section-01-2.md)
   * [Section III - starting the service](module-04/section-iv-starting-the-service.md)
-  * [Section V - service testing](module-04/04-section-05.md)
+  * [Section IV - feeding the service](module-04/04-section-05.md)
 * [Module IV - Building a Genesis Microservice for Processing the Sourced Data](module-05/README.md)
   * [Section I - Overview](module-05/section-i-overview.md)
   * [Section II - manifest](module-05/05-section-01.md)

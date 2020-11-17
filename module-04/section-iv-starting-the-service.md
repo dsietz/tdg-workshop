@@ -12,9 +12,7 @@ In a new terminal, start up a Kafka producer for the specified topic - in this c
 kafka_2.13-2.6.0/bin/kafka-console-producer.sh --topic names --bootstrap-server localhost:9092
 ```
 
-## STOPPED HERE
-
-We are now ready to start the microseervice service that will listen for data that needs to be analyzed and added to the profile's algorithm.
+We are now ready to start the microservice service that will listen for data that needs to be analyzed and added to the profile's algorithm.
 
 There are 2 ways to start the service.
 
