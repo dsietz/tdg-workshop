@@ -14,7 +14,7 @@
 > Privacy Design Strategies \(The Little Blue Book\) - Jaap-Henk Hoepman - August 23, 2019
 
 {% hint style="info" %}
-You can implement Privacy Strategies using the `PbD SDK`
+You can implement Privacy Strategies using the [`PbD SDK`](https://crates.io/crates/pbd)\`\`
 {% endhint %}
 
 
