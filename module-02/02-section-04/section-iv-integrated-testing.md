@@ -1,6 +1,6 @@
 # Section IV - integrated testing
 
-> [web-service-tests.rs](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/tests/web-service-tests.rs)
+> web-service-tests.rs
 
 We now have one last step, which is to add a function that will provide the service object. This is will not be covered by unit testing and is instead should be covered by integrated testing.
 
@@ -25,7 +25,7 @@ In order to execute our service test, we will first need to include the some lib
 ```rust
 [dependencies]
 actix-web = "3"
-test-data-generation = "0.2"
+test-data-generation = "0.2.0"
 log = "0.4"
 env_logger = "0.8"
 
