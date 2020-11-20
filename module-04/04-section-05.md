@@ -39,420 +39,632 @@ If you open and format the `names.json` file in the `profile` directory, you can
 
 ```javascript
 {
-  "id": "names",
-  "patterns": {
-    "Cvc": 1,
-    "Cvcc": 1,
-    "Cvccc": 2,
-    "Cvccvccvc": 1,
-    "Cvcvccvc": 1
-  },
-  "pattern_total": 6,
-  "pattern_keys": [
-    "Cvc",
-    "Cvcc",
-    "Cvccc",
-    "Cvccvccvc",
-    "Cvcvccvc"
-  ],
-  "pattern_vals": [
-    1,
-    1,
-    2,
-    1,
-    1
-  ],
-  "pattern_percentages": [
-    [
-      "Cvccc",
-      33.33333333333333
-    ],
-    [
+   "id":"names",
+   "patterns":{
+      "Cvc":1,
+      "Cvcc":1,
+      "Cvccc":2,
+      "Cvccvccvc":1,
+      "Cvcvccvc":1
+   },
+   "pattern_total":6,
+   "pattern_keys":[
       "Cvc",
-      16.666666666666664
-    ],
-    [
       "Cvcc",
-      16.666666666666664
-    ],
-    [
-      "Cvccvccvc",
-      16.666666666666664
-    ],
-    [
-      "Cvcvccvc",
-      16.666666666666664
-    ]
-  ],
-  "pattern_ranks": [
-    [
       "Cvccc",
-      33.33333333333333
-    ],
-    [
-      "Cvc",
-      49.99999999999999
-    ],
-    [
-      "Cvcc",
-      66.66666666666666
-    ],
-    [
       "Cvccvccvc",
-      83.33333333333331
-    ],
-    [
-      "Cvcvccvc",
-      99.99999999999997
-    ]
-  ],
-  "sizes": {
-    "3": 1,
-    "4": 1,
-    "5": 2,
-    "8": 1,
-    "9": 1
-  },
-  "size_total": 6,
-  "size_ranks": [
-    [
-      5,
-      33.33333333333333
-    ],
-    [
-      3,
-      49.99999999999999
-    ],
-    [
-      4,
-      66.66666666666666
-    ],
-    [
-      8,
-      83.33333333333331
-    ],
-    [
-      9,
-      99.99999999999997
-    ]
-  ],
-  "processors": 4,
-  "facts": [
-    [
-      {
-        "key": "J",
-        "prior_key": null,
-        "next_key": "o",
-        "pattern_placeholder": "C",
-        "starts_with": 1,
-        "ends_with": 0,
-        "index_offset": 0
-      },
-      {
-        "key": "J",
-        "prior_key": null,
-        "next_key": "o",
-        "pattern_placeholder": "C",
-        "starts_with": 1,
-        "ends_with": 0,
-        "index_offset": 0
-      },
-      {
-        "key": "y",
-        "prior_key": "n",
-        "next_key": null,
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 1,
-        "index_offset": 4
-      },
-      {
-        "key": "J",
-        "prior_key": null,
-        "next_key": "o",
-        "pattern_placeholder": "C",
-        "starts_with": 1,
-        "ends_with": 0,
-        "index_offset": 0
-      },
-      {
-        "key": "y",
-        "prior_key": "n",
-        "next_key": null,
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 1,
-        "index_offset": 4
-      },
-      {
-        "key": "J",
-        "prior_key": null,
-        "next_key": "o",
-        "pattern_placeholder": "C",
-        "starts_with": 1,
-        "ends_with": 0,
-        "index_offset": 0
-      },
-      {
-        "key": "t",
-        "prior_key": "a",
-        "next_key": "h",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 4
-      },
-      {
-        "key": "J",
-        "prior_key": null,
-        "next_key": "o",
-        "pattern_placeholder": "C",
-        "starts_with": 1,
-        "ends_with": 0,
-        "index_offset": 0
-      },
-      {
-        "key": "a",
-        "prior_key": "n",
-        "next_key": "t",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 4
-      },
-      {
-        "key": "n",
-        "prior_key": "o",
-        "next_key": null,
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 1,
-        "index_offset": 8
-      },
-      {
-        "key": "J",
-        "prior_key": null,
-        "next_key": "o",
-        "pattern_placeholder": "C",
-        "starts_with": 1,
-        "ends_with": 0,
-        "index_offset": 0
-      }
-    ],
-    [
-      {
-        "key": "o",
-        "prior_key": "J",
-        "next_key": "h",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 1
-      },
-      {
-        "key": "o",
-        "prior_key": "J",
-        "next_key": "n",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 1
-      },
-      {
-        "key": "o",
-        "prior_key": "J",
-        "next_key": "h",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 1
-      },
-      {
-        "key": "o",
-        "prior_key": "J",
-        "next_key": "n",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 1
-      },
-      {
-        "key": "h",
-        "prior_key": "t",
-        "next_key": "o",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 5
-      },
-      {
-        "key": "o",
-        "prior_key": "J",
-        "next_key": "h",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 1
-      },
-      {
-        "key": "t",
-        "prior_key": "a",
-        "next_key": "h",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 5
-      },
-      {
-        "key": "o",
-        "prior_key": "J",
-        "next_key": "n",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 1
-      }
-    ],
-    [
-      {
-        "key": "h",
-        "prior_key": "o",
-        "next_key": "n",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 2
-      },
-      {
-        "key": "n",
-        "prior_key": "o",
-        "next_key": "n",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 2
-      },
-      {
-        "key": "h",
-        "prior_key": "o",
-        "next_key": "n",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 2
-      },
-      {
-        "key": "n",
-        "prior_key": "o",
-        "next_key": "a",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 2
-      },
-      {
-        "key": "o",
-        "prior_key": "h",
-        "next_key": "n",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 6
-      },
-      {
-        "key": "h",
-        "prior_key": "o",
-        "next_key": "n",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 2
-      },
-      {
-        "key": "h",
-        "prior_key": "t",
-        "next_key": "o",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 6
-      },
-      {
-        "key": "n",
-        "prior_key": "o",
-        "next_key": null,
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 1,
-        "index_offset": 2
-      }
-    ],
-    [
-      {
-        "key": "n",
-        "prior_key": "h",
-        "next_key": null,
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 1,
-        "index_offset": 3
-      },
-      {
-        "key": "n",
-        "prior_key": "n",
-        "next_key": "y",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 3
-      },
-      {
-        "key": "n",
-        "prior_key": "h",
-        "next_key": "y",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 3
-      },
-      {
-        "key": "a",
-        "prior_key": "n",
-        "next_key": "t",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 3
-      },
-      {
-        "key": "n",
-        "prior_key": "o",
-        "next_key": null,
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 1,
-        "index_offset": 7
-      },
-      {
-        "key": "n",
-        "prior_key": "h",
-        "next_key": "a",
-        "pattern_placeholder": "c",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 3
-      },
-      {
-        "key": "o",
-        "prior_key": "h",
-        "next_key": "n",
-        "pattern_placeholder": "v",
-        "starts_with": 0,
-        "ends_with": 0,
-        "index_offset": 7
-      }
-    ]
-  ]
+      "Cvcvccvc"
+   ],
+   "pattern_vals":[
+      1,
+      1,
+      2,
+      1,
+      1
+   ],
+   "pattern_percentages":[
+      [
+         "Cvcc",
+         100.0
+      ],
+      [
+         "Cvccc",
+         66.66666666666666
+      ],
+      [
+         "Cvcc",
+         50.0
+      ],
+      [
+         "Cvccc",
+         50.0
+      ],
+      [
+         "Cvccc",
+         50.0
+      ],
+      [
+         "Cvccc",
+         40.0
+      ],
+      [
+         "Cvcc",
+         33.33333333333333
+      ],
+      [
+         "Cvccc",
+         33.33333333333333
+      ],
+      [
+         "Cvcc",
+         25.0
+      ],
+      [
+         "Cvcvccvc",
+         25.0
+      ],
+      [
+         "Cvcc",
+         20.0
+      ],
+      [
+         "Cvccvccvc",
+         20.0
+      ],
+      [
+         "Cvcvccvc",
+         20.0
+      ],
+      [
+         "Cvc",
+         16.666666666666664
+      ],
+      [
+         "Cvcc",
+         16.666666666666664
+      ],
+      [
+         "Cvccvccvc",
+         16.666666666666664
+      ],
+      [
+         "Cvcvccvc",
+         16.666666666666664
+      ]
+   ],
+   "pattern_ranks":[
+      [
+         "Cvcc",
+         100.0
+      ],
+      [
+         "Cvcc",
+         100.0
+      ],
+      [
+         "Cvcc",
+         150.0
+      ],
+      [
+         "Cvccc",
+         200.0
+      ],
+      [
+         "Cvcc",
+         100.0
+      ],
+      [
+         "Cvccc",
+         166.66666666666666
+      ],
+      [
+         "Cvcc",
+         216.66666666666663
+      ],
+      [
+         "Cvccc",
+         266.66666666666663
+      ],
+      [
+         "Cvcc",
+         299.99999999999994
+      ],
+      [
+         "Cvcc",
+         100.0
+      ],
+      [
+         "Cvccc",
+         166.66666666666666
+      ],
+      [
+         "Cvcc",
+         216.66666666666663
+      ],
+      [
+         "Cvccc",
+         266.66666666666663
+      ],
+      [
+         "Cvccc",
+         316.66666666666663
+      ],
+      [
+         "Cvcc",
+         349.99999999999994
+      ],
+      [
+         "Cvcc",
+         374.99999999999994
+      ],
+      [
+         "Cvcvccvc",
+         399.99999999999994
+      ],
+      [
+         "Cvcc",
+         100.0
+      ],
+      [
+         "Cvccc",
+         166.66666666666666
+      ],
+      [
+         "Cvcc",
+         216.66666666666663
+      ],
+      [
+         "Cvccc",
+         266.66666666666663
+      ],
+      [
+         "Cvccc",
+         316.66666666666663
+      ],
+      [
+         "Cvccc",
+         356.66666666666663
+      ],
+      [
+         "Cvcc",
+         389.99999999999994
+      ],
+      [
+         "Cvcc",
+         414.99999999999994
+      ],
+      [
+         "Cvcvccvc",
+         439.99999999999994
+      ],
+      [
+         "Cvcc",
+         459.99999999999994
+      ],
+      [
+         "Cvccvccvc",
+         479.99999999999994
+      ],
+      [
+         "Cvcvccvc",
+         499.99999999999994
+      ],
+      [
+         "Cvcc",
+         100.0
+      ],
+      [
+         "Cvccc",
+         166.66666666666666
+      ],
+      [
+         "Cvcc",
+         216.66666666666666
+      ],
+      [
+         "Cvccc",
+         266.66666666666663
+      ],
+      [
+         "Cvccc",
+         316.66666666666663
+      ],
+      [
+         "Cvccc",
+         356.66666666666663
+      ],
+      [
+         "Cvcc",
+         389.99999999999994
+      ],
+      [
+         "Cvccc",
+         423.33333333333326
+      ],
+      [
+         "Cvcc",
+         448.33333333333326
+      ],
+      [
+         "Cvcvccvc",
+         473.33333333333326
+      ],
+      [
+         "Cvcc",
+         493.33333333333326
+      ],
+      [
+         "Cvccvccvc",
+         513.3333333333333
+      ],
+      [
+         "Cvcvccvc",
+         533.3333333333333
+      ],
+      [
+         "Cvc",
+         549.9999999999999
+      ],
+      [
+         "Cvcc",
+         566.6666666666665
+      ],
+      [
+         "Cvccvccvc",
+         583.3333333333331
+      ],
+      [
+         "Cvcvccvc",
+         599.9999999999998
+      ]
+   ],
+   "sizes":{
+      "3":1,
+      "4":1,
+      "5":2,
+      "8":1,
+      "9":1
+   },
+   "size_total":6,
+   "size_ranks":[
+      [
+         5,
+         33.33333333333333
+      ],
+      [
+         3,
+         49.99999999999999
+      ],
+      [
+         4,
+         66.66666666666666
+      ],
+      [
+         8,
+         83.33333333333331
+      ],
+      [
+         9,
+         99.99999999999997
+      ]
+   ],
+   "processors":4,
+   "facts":[
+      [
+         {
+            "key":"J",
+            "prior_key":null,
+            "next_key":"o",
+            "pattern_placeholder":"C",
+            "starts_with":1,
+            "ends_with":0,
+            "index_offset":0
+         },
+         {
+            "key":"J",
+            "prior_key":null,
+            "next_key":"o",
+            "pattern_placeholder":"C",
+            "starts_with":1,
+            "ends_with":0,
+            "index_offset":0
+         },
+         {
+            "key":"y",
+            "prior_key":"n",
+            "next_key":null,
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":1,
+            "index_offset":4
+         },
+         {
+            "key":"J",
+            "prior_key":null,
+            "next_key":"o",
+            "pattern_placeholder":"C",
+            "starts_with":1,
+            "ends_with":0,
+            "index_offset":0
+         },
+         {
+            "key":"y",
+            "prior_key":"n",
+            "next_key":null,
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":1,
+            "index_offset":4
+         },
+         {
+            "key":"J",
+            "prior_key":null,
+            "next_key":"o",
+            "pattern_placeholder":"C",
+            "starts_with":1,
+            "ends_with":0,
+            "index_offset":0
+         },
+         {
+            "key":"t",
+            "prior_key":"a",
+            "next_key":"h",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":4
+         },
+         {
+            "key":"J",
+            "prior_key":null,
+            "next_key":"o",
+            "pattern_placeholder":"C",
+            "starts_with":1,
+            "ends_with":0,
+            "index_offset":0
+         },
+         {
+            "key":"a",
+            "prior_key":"n",
+            "next_key":"t",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":4
+         },
+         {
+            "key":"n",
+            "prior_key":"o",
+            "next_key":null,
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":1,
+            "index_offset":8
+         },
+         {
+            "key":"J",
+            "prior_key":null,
+            "next_key":"o",
+            "pattern_placeholder":"C",
+            "starts_with":1,
+            "ends_with":0,
+            "index_offset":0
+         }
+      ],
+      [
+         {
+            "key":"o",
+            "prior_key":"J",
+            "next_key":"h",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":1
+         },
+         {
+            "key":"o",
+            "prior_key":"J",
+            "next_key":"n",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":1
+         },
+         {
+            "key":"o",
+            "prior_key":"J",
+            "next_key":"h",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":1
+         },
+         {
+            "key":"o",
+            "prior_key":"J",
+            "next_key":"n",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":1
+         },
+         {
+            "key":"h",
+            "prior_key":"t",
+            "next_key":"o",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":5
+         },
+         {
+            "key":"o",
+            "prior_key":"J",
+            "next_key":"h",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":1
+         },
+         {
+            "key":"t",
+            "prior_key":"a",
+            "next_key":"h",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":5
+         },
+         {
+            "key":"o",
+            "prior_key":"J",
+            "next_key":"n",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":1
+         }
+      ],
+      [
+         {
+            "key":"h",
+            "prior_key":"o",
+            "next_key":"n",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":2
+         },
+         {
+            "key":"n",
+            "prior_key":"o",
+            "next_key":"n",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":2
+         },
+         {
+            "key":"h",
+            "prior_key":"o",
+            "next_key":"n",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":2
+         },
+         {
+            "key":"n",
+            "prior_key":"o",
+            "next_key":"a",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":2
+         },
+         {
+            "key":"o",
+            "prior_key":"h",
+            "next_key":"n",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":6
+         },
+         {
+            "key":"h",
+            "prior_key":"o",
+            "next_key":"n",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":2
+         },
+         {
+            "key":"h",
+            "prior_key":"t",
+            "next_key":"o",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":6
+         },
+         {
+            "key":"n",
+            "prior_key":"o",
+            "next_key":null,
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":1,
+            "index_offset":2
+         }
+      ],
+      [
+         {
+            "key":"n",
+            "prior_key":"h",
+            "next_key":null,
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":1,
+            "index_offset":3
+         },
+         {
+            "key":"n",
+            "prior_key":"n",
+            "next_key":"y",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":3
+         },
+         {
+            "key":"n",
+            "prior_key":"h",
+            "next_key":"y",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":3
+         },
+         {
+            "key":"a",
+            "prior_key":"n",
+            "next_key":"t",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":3
+         },
+         {
+            "key":"n",
+            "prior_key":"o",
+            "next_key":null,
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":1,
+            "index_offset":7
+         },
+         {
+            "key":"n",
+            "prior_key":"h",
+            "next_key":"a",
+            "pattern_placeholder":"c",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":3
+         },
+         {
+            "key":"o",
+            "prior_key":"h",
+            "next_key":"n",
+            "pattern_placeholder":"v",
+            "starts_with":0,
+            "ends_with":0,
+            "index_offset":7
+         }
+      ]
+   ]
 }
 ```
 
