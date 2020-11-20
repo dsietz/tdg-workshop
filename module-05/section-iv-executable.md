@@ -1,6 +1,6 @@
 # Section I - module
 
-> [tdg\_service.rs](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/src/tdg_service.rs)
+> tdg\_service.rs
 
 We will begin by first adding a new function to handle the new resource path that supports path parameters. Open the `bin/tdg_service.rs` file for editing. 
 

@@ -1,6 +1,6 @@
 # Section II - executable - consuming
 
-> [tdg-analyzer.rs](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/src/bin/tdg-analyzer.rs)
+> tdg-analyzer.rs
 
 We first need to create the executable file: `src/bin/tdg-analyzer.rs`.
 
