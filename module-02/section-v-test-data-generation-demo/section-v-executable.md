@@ -1,6 +1,6 @@
 # Section V - executable
 
-Since the`tdg-service.rs` endpoint is simply a wrapper the routes to the module's functions, we don't need to make any changes in this file.
+Since the`tdg-service.rs` endpoint i simply a wrapper the routes to the module's functions, we don't need to make any changes in this file.
 
 Restart the web service \(`cargo run`\) and run the `curl-tdg.sh` script multiple times.
 
