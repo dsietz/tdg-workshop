@@ -2,7 +2,7 @@
 
 ### Add Another Data Topic
 
-What you would have to do to add a new data topic to the test data generation platform for generating `birthdates`?
+What you would have to do to add a new data topic to the test data generation platform for generating `birth dates`?
 
 ### Improving Realisticity
 
