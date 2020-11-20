@@ -71,7 +71,7 @@ fn main() {
             },
           }
         }
-        consumer.consume_messageset(ms);
+        consumer.consume_messageset(ms).unwrap();
       }
       consumer.commit_consumed().unwrap();
     }

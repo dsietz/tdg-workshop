@@ -22,7 +22,7 @@ path = "src/bin/tdg-analyzer.rs"
 log = "0.4"
 env_logger = "0.8"
 actix-web = "3"
-test-data-generation = "0.2.0"
+test-data-generation = "0.2"
 kafka = "0.8"
 clap = "2.33"
 
