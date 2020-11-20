@@ -1,10 +1,10 @@
 # Section II - executable
 
-> tdg-service.rs
+> [tdg-service.rs](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/src/bin/tdg-service.rs)
 
 We can now add the new resource path to our executable \(RESTful service\). To do this, we will modify the `bin/tdg-service.rs` file.
 
-To add the new service path \(which calls a funciton with a defined path\), we just need to add the line `.service(tdg_service::profile)` to the `App`
+To add the new service path \(which calls a function with a defined path\), we just need to add the line `.service(tdg_service::profile)` to the `App`
 
 ```rust
 use myapp::tdg_service;

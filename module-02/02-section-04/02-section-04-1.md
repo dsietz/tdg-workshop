@@ -1,6 +1,6 @@
 # Section IV - manifest
 
-> [Cargo.toml](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/Cargo.toml)
+> Cargo.toml
 
 We already have the binary file defined in the manifest file, but there are dependent packages that we will need to include in order to make it a RESTful service.
 

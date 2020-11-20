@@ -1,6 +1,6 @@
 # Section V - module
 
-> [tdg\_service.toml](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/src/tdg_service.rs)
+> tdg\_service.toml
 
 To make changes to the logic of our service, we only need to modify the `tdg_service.rs` module that the binary service calls.
 
