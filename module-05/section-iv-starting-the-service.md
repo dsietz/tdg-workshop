@@ -12,29 +12,3 @@ ArchConfWorkshopUser:~/environment/rust-tdg (master) $ cargo run --bin tdg_servi
      Running `target/debug/tdg_service`
 ```
 
-We can now call the RESTful service to provide test data that is generated from the `profile` that is maintained by the Data Sample Analyzer microservice.
-
-```text
-./scripts/curl-tdg.sh names
-```
-
-```text
-ArchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh names
-JohnA
-rchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh names
-Jonn
-ArchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh names
-Jonn
-ArchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh names
-John
-ArchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh names
-John
-ArchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh names
-Jonn
-ArchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh names
-John
-ArchConfWorkshopUser:~/environment $ ./scripts/curl-tdg.sh names
-```
-
-## STOPPED HERE
-
