@@ -43,3 +43,19 @@ Notice that the test data generated is very limited due to the data we entered:
 
 ### Continuous Analyzing 
 
+First, ensure that the Data Analyzer microservice for the `names` topic is still running. 
+
+> `./target/debug/tdg_analyzer --topic names`
+
+Using the terminal where the Kafka producer is still running for the `names` topic, start feeding it more names.
+
+> `kafka_2.13-2.6.0/bin/kafka-console-producer.sh --topic names --bootstrap-server localhost:9092`
+
+{% hint style="info" %}
+You should see messages in the Data Analyzer's consoler that the names are being processed.
+{% endhint %}
+
+Call the RESTful endpoint again and see what test data is now generated.
+
+
+
