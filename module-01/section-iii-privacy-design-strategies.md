@@ -17,5 +17,3 @@
 You can implement Privacy Strategies using the [`PbD SDK`](https://crates.io/crates/pbd)\`\`
 {% endhint %}
 
-
-
