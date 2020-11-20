@@ -1,6 +1,6 @@
 # Section IV - executable
 
-> [tdg-service.rs](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/src/bin/tdg-service.rs)
+> tdg-service.rs
 
 Once we have created our service and all the tests have passed, we are ready to build out the executable and run our service.
 
@@ -15,7 +15,7 @@ We start by first adding the `log` and `env_logger` crates to the `Cargo.toml` m
 log = "0.4"
 env_logger = "0.8"
 actix-web = "3"
-test-data-generation = "0.2"
+test-data-generation = "0.2.0"
 ```
 
 Next, we update the `lib.rs` file to include the logging creates and modules.
