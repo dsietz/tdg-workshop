@@ -1,6 +1,6 @@
 # Section IV - integrated testing
 
-> web-service-tests.rs
+> [web-service-tests.rs](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/tests/web-service-tests.rs)
 
 We now have one last step, which is to add a function that will provide the service object. This is will not be covered by unit testing and is instead should be covered by integrated testing.
 

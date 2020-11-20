@@ -1,6 +1,6 @@
 # Section IV - executable
 
-> tdg-service.rs
+> [tdg-service.rs](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/src/bin/tdg-service.rs)
 
 Once we have created our service and all the tests have passed, we are ready to build out the executable and run our service.
 
