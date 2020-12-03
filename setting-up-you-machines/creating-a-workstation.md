@@ -4,7 +4,7 @@
 virtual workstations kindly hosted by [IAPP.org](https://iapp.org/)
 {% endhint %}
 
-First login to the AWS Console. Open your browser and navigate to teh AWS Cloud9 Product page:
+First login to the AWS Console. Open your browser and navigate to the AWS Cloud9 Product page:
 
 [https://us-east-2.console.aws.amazon.com/cloud9/home/product](https://us-east-2.console.aws.amazon.com/cloud9/home/product)
 
