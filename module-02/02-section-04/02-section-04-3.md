@@ -1,6 +1,6 @@
 # Section IV - module
 
-> tdg\_service.rs
+> [tdg\_service.rs](https://github.com/dsietz/tdg-workshop/blob/master/rust-tdg/src/tdg_service.rs)
 
 To create the module, create a new file named `tdg_service.rs` in the **/src** directory.
 

@@ -37,6 +37,12 @@ Select the following:
 
 ![](../.gitbook/assets/cloud9-03.jpg)
 
+{% hint style="warning" %}
+Please add the following New Tag before clicking `Next step`
+{% endhint %}
+
+![](../.gitbook/assets/image.png)
+
 Click `Next step`
 
 ## Step 3
