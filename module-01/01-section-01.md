@@ -13,7 +13,7 @@ In order for the Test Data to be realistic, it must effectively represent the **
 
 ### Timely
 
-Untimely Test Data can directly impact our ability to test our solutions and hinder our devlier time. Waiting for Test Data to be _reset_ after running tests, \(e.g.: scheduled batch jobs\) is a common point of frustration.
+Untimely Test Data can directly impact our ability to test our solutions and hinder our deliver time. Waiting for Test Data to be _reset_ after running tests, \(e.g.: scheduled batch jobs\) is a common point of frustration.
 
 ### Subsets
 
