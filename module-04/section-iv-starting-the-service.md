@@ -18,7 +18,7 @@ There are 2 ways to start the service.
 
 1. Running using `cargo run` command while developing \(used for local service testing\)
 
-> NOTE: we provide the argument `--bin myapp_sourcing` because there are now multiple executables and must specify which one to run.
+> NOTE: we provide the argument `--bin`tdg\_analyzer\`  because there are now multiple executables and must specify which one to run.
 
 ```text
 ArchConfWorkshopUser:~/environment/rust-tdg (master) $ cargo run --bin tdg_analyzer -- --topic names
